@@ -16,5 +16,16 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :first_name, :last_name, :facebook_account, :twitter_account, :password, :password_confirmation)
   end
+  
+  def authenticate
+    unless logged_in?
+      redirect_to login_path
+    end
+  end
 
+  def authorize
+    unless current_user == @user
+      redirect_to login_path
+    end
+  end
 end
