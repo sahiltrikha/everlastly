@@ -28,4 +28,8 @@ class UsersController < ApplicationController
       redirect_to login_path
     end
   end
+  def show
+    @user = User.find_by(id: params[:id])
+    render :show
+  end
 end
