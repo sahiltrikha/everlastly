@@ -1,0 +1,20 @@
+<h1>Create a Message</h1>
+<%= form_for [@user, @message] do |f| %>
+  <%= f.label :text_message %>
+  <%= f.text_field :text_message %>
+  <br/>
+
+  <%= f.label :video_link %>
+  <%= f.url_field :video_link %>
+  <br/>
+
+  <%= f.label :photo_link %>
+  <%= f.url_field :photo_link %>
+  <br/>
+
+  <%= f.label :send_date %>
+  <%= f.date_field :send_date %>
+  <br/>
+  
+  <%= f.submit @message.id.nil? ? "Create Message" : "Save Changes" %>
+<% end %>

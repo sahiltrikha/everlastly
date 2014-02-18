@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20140214195236) do
     t.text     "video_link"
     t.text     "photo_link"
     t.datetime "send_date"
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140214195236) do
     t.string   "last_name"
     t.text     "facebook_account"
     t.text     "twitter_account"
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

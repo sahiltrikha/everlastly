@@ -15,7 +15,7 @@ class Basic < ActiveRecord::Migration
       t.text :video_link
       t.text :photo_link
       t.datetime :send_date
-      t.references :users
+      t.references :user
       t.timestamps
     end
     create_table :recipients do |t|
@@ -24,7 +24,7 @@ class Basic < ActiveRecord::Migration
       t.string :last_name
       t.text :facebook_account
       t.text :twitter_account
-      t.references :users
+      t.references :user
       t.timestamps
     end
     create_table :message_recipient do |t|
