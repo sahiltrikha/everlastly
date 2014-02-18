@@ -2,7 +2,7 @@ class Message < ActiveRecord::Base
   belongs_to :user
   has_many :message_recipients
 
-   validates :send_date, :user_id presence: true
+  # validates :send_date, :user_id presence: true
   # validates :has_message?
 
   # def has_message?
