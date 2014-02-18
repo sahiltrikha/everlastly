@@ -1,0 +1,11 @@
+Release Date: <%= @message.send_date %>
+</br>
+Message: <%= @message.text_message %>
+</br>
+
+<% unless @message.video_link == "" %>
+<iframe width="560" height="315" src="//www.youtube.com/embed/<%=@message.video_link.split("=")[1] %>" frameborder="0" allowfullscreen></iframe>
+</br>
+<% end %>
+
+<img src=<%= @message.photo_link%>>
