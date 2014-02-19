@@ -9,3 +9,5 @@ Message: <%= @message.text_message %>
 <% end %>
 
 <img src=<%= @message.photo_link%>>
+
+<button><a href="/users/<%= params[:user_id] %>/messages/<%= params[:id] %>/recipients/new">NEXT</a></button>

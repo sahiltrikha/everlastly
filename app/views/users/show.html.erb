@@ -1,2 +1,3 @@
 <h1>Welcome to Yer Homepage <%= @user.first_name %></h1>
 <h2><a href="/users/<%=params[:id]%>/messages/new">Create a message</a></h2>
+<p><%= flash[:notice] %></p>

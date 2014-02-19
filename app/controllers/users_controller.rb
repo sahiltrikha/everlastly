@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.new
     render(:new)
   end
+  
   def create
     @user = User.new(user_params)
 
@@ -12,6 +13,13 @@ class UsersController < ApplicationController
       render(:new)
     end
   end
+  
+  def show
+    @user = User.find_by(id: params[:id])
+    render :show
+  end
+
+  private
 
   def user_params
     params.require(:user).permit(:email, :first_name, :last_name, :facebook_account, :twitter_account, :password, :password_confirmation)
@@ -28,8 +36,5 @@ class UsersController < ApplicationController
       redirect_to login_path
     end
   end
-  def show
-    @user = User.find_by(id: params[:id])
-    render :show
-  end
+
 end

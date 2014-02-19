@@ -1,0 +1,27 @@
+<h1>Recipients Previously Added for this User</h1>
+
+<form>
+<% @recipients_list.each do |recipient| %>
+<ul>
+<input type="checkbox" name="recipient_id" value=<%= recipient.id %>><%= recipient.first_name %><br>
+</ul>
+<% end %>
+<button>submit</button>
+</form>
+
+<h1>Add Your Audience</h1>
+<%= form_for @recipient, url:  user_message_recipients_path do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <br/>
+
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+  <br/>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  <br/>
+
+  <%= f.submit @user.id.nil? ? "Add Recipient!" : "Save Changes" %>
+<% end %>
